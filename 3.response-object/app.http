@@ -1,0 +1,21 @@
+### HTTP/1.1
+GET http://localhost:8000/users 
+
+### HTTP/1.1
+GET http://localhost:8000/notfound
+
+### HTTP/1.1
+GET http://localhost:8000/hello
+
+### HTTP/1.1
+GET http://localhost:8000/old-route
+
+
+### HTTP/1.1
+GET http://localhost:8000/permanent-redirect
+
+### HTTP/1.1
+GET http://localhost:8000/download
+
+### HTTP/1.1
+GET http://localhost:8000/close
