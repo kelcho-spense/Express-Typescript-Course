@@ -1,0 +1,28 @@
+### HTTP/1.1
+GET http://localhost:8000/ 
+
+### HTTP/1.1
+GET http://localhost:8000/users/1 
+
+### HTTP/1.1
+GET http://localhost:8000/search?q=what is in here? 
+###
+POST http://localhost:8000/users 
+Content-Type: application/json
+
+{
+    "name": "john",
+    "email":"johndoe@mail.com"
+}
+
+### HTTP/1.1
+PUT http://localhost:8000/users/1 
+Content-Type: application/json
+
+{
+    "name": "john",
+    "email":"johndoe@mail.com"
+}
+
+### HTTP/1.1
+DELETE http://localhost:8000/users/1 
