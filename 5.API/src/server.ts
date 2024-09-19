@@ -1,19 +1,10 @@
-import 'dotenv/config';
-import express, { Request, Response } from 'express';
-import userRoutes from './routes/userRoutes';
+// src/server.ts
+import app from './app';
+import { config } from './config';
+import logger  from './middleware/logger';
 
+const PORT = config.port;
 
-const app = express();
-const port = Number(process.env.PORT);
-
-//middlewares
-app.use(express.json()); // Parse incoming JSON data
-app.use(express.urlencoded({ extended: true })); // Parse URL-encoded data
-
-app.use('/api/users', userRoutes);
-
-
-
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  logger.info(`Server is running on port ${PORT}`);
 });

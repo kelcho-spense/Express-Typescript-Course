@@ -1,5 +1,5 @@
 // src/app.ts
-import express from 'express';
+import express, { Request, Response } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import logger from './middleware/logger';
@@ -34,7 +34,7 @@ app.use(rateLimiter);
 app.use(metricsMiddleware);
 
 // Routes
-app.use('/users', userRoutes);
+app.use('/api/users', userRoutes);
 // app.use('/products', productRoutes);
 
 // Metrics endpoint
@@ -44,7 +44,7 @@ app.get('/metrics', metricsRoute);
 // setupSwagger(app);
 
 // Health check
-app.get('/health', (req, res) => {
+app.get('/health', (req: Request, res: Response) => {
   res.status(200).json({ status: 'UP' });
 });
 

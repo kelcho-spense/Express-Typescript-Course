@@ -1,2 +1,24 @@
 ### HTTP/1.1
+POST http://localhost:8000/api/users/register 
+Content-Type: application/json
+
+{
+    "username": "kevin",
+    "email":"kevin@gmail.com",
+    "password": "pass"
+}
+
+### HTTP/1.1
+POST http://localhost:8000/api/users/login 
+Content-Type: application/json
+
+{
+    "email":"kevin@gmail.com",
+    "password": "pass"
+}
+
+### HTTP/1.1
+GET http://localhost:8000/api/users/sessions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRERDlFRjFELTI0MTAtNEU1Qy1BQ0YxLUU5NEQwMkNBOUQxNyIsImVtYWlsIjoia2V2aW5AZ21haWwuY29tIiwiaWF0IjoxNzI2NzU3NDg2LCJleHAiOjE3MjY3NjEwODZ9.yeoca4C80Y-RwPJxatmabQ7US96dSYEc2nZJAJUUOI4
+### HTTP/1.1
 GET http://localhost:8000/api/users 
