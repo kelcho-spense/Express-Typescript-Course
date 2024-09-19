@@ -20,7 +20,7 @@ export const registerUser = async (username: string, email: string, password: st
         updatedAt: new Date(),
     };
 
-    await db.poolConnect();
+    await db.poolConnect;
     const request = db.pool.request();
     await request
         .input('id', db.sql.VarChar, user.id)
@@ -92,7 +92,7 @@ export const updateUser = async (id: string, updatedFields: Partial<User>): Prom
     const request = db.pool.request();
 
     if (password) {
-        updatedFields.password = await bcrypt.hash(password, saltRounds);
+        updatedFields.password = await bcrypt.hash(password, 10);
     }
 
     await request
