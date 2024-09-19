@@ -28,9 +28,46 @@ Authorization: Bearer <access_token>
 ### HTTP/1.1 Logout from One Device
 POST http://localhost:8000/api/users/logout
 Authorization: Bearer <access_token>
-
 Content-Type: application/json
 
 {
     "refreshToken": "<refresh_token>"
 }
+
+### HTTP/1.1 Creates a new product
+POST http://localhost:8000/api/products
+Authorization: Bearer <access_token>
+Content-Type: application/json
+
+{
+    "name": "Product Name",
+    "description": "Product Description",
+    "price": 99.99
+}
+
+### HTTP/1.1 Get a Single Product by ID
+GET http://localhost:8000/api/products/{id}
+Authorization: Bearer <access_token>
+
+### HTTP/1.1 Get All Products
+GET http://localhost:8000/api/products
+Authorization: Bearer <access_token>
+
+### HTTP/1.1 Update Product by ID
+PUT http://localhost:8000/api/products/{id}
+Authorization: Bearer <access_token>
+Content-Type: application/json
+
+{
+    "name": "Updated Product Name",
+    "description": "Updated Product Description",
+    "price": 149.99
+}
+
+### HTTP/1.1 Delete Product by ID
+DELETE http://localhost:8000/api/products/{id}
+Authorization: Bearer <access_token>
+
+
+
+

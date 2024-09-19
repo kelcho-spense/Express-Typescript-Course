@@ -5,7 +5,7 @@ import cors from 'cors';
 import logger from './middleware/logger';
 import rateLimiter from './middleware/rateLimiter';
 import userRoutes from './routes/userRoutes';
-// import productRoutes from './routes/productRoutes';
+import productRoutes from './routes/productRoutes';
 // import setupSwagger from './config/swagger';
 import { metricsMiddleware, metricsRoute } from './middleware/metrics';
 import morgan from 'morgan';
@@ -35,7 +35,7 @@ app.use(metricsMiddleware);
 
 // Routes
 app.use('/api/users', userRoutes);
-// app.use('/products', productRoutes);
+app.use('/products', productRoutes);
 
 // Metrics endpoint
 app.get('/metrics', metricsRoute);

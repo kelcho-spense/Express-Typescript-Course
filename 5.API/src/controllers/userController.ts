@@ -16,7 +16,7 @@ export const register = async (req: Request, res: Response) => {
     }
 };
 
-//User Login Endpoint
+// User Login Endpoint
 export const login = async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
@@ -28,7 +28,7 @@ export const login = async (req: Request, res: Response) => {
     }
 };
 
-//Get all Sessions : getting all active sessions for the current user:
+// Get all Sessions : getting all active sessions for the current user:
 export const getUserSessions = async (req: AuthRequest, res: Response) => {
     if (!req.user) {
         return res.status(401).json({ message: 'Unauthorized' });
@@ -57,7 +57,6 @@ export const logout = async (req: Request, res: Response) => {
 };
 
 // Delete All Session (logout from all devices)
-
 export const logoutFromAllSessions = async (req: Request, res: Response) => {
     const userId = (req as any).user.id;
 
@@ -69,8 +68,7 @@ export const logoutFromAllSessions = async (req: Request, res: Response) => {
     }
 };
 
-
-//Get All Users Endpoint
+// Get All Users Endpoint
 export const getAllUsersController = async (req: Request, res: Response) => {
     try {
         const users = await getAllUsers();
