@@ -39,13 +39,9 @@ app.get('/download', (req, res) => {
 });
 
 // res.end()
-
 app.get('/close', (req, res) => {
   res.status(204).end(); // 204 No Content
 });
-
-
-
 
 
 app.listen(port, () => {
