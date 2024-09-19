@@ -1,4 +1,4 @@
-### HTTP/1.1
+### HTTP/1.1 User Registration
 POST http://localhost:8000/api/users/register 
 Content-Type: application/json
 
@@ -8,7 +8,7 @@ Content-Type: application/json
     "password": "pass"
 }
 
-### HTTP/1.1
+### HTTP/1.1 User Login
 POST http://localhost:8000/api/users/login 
 Content-Type: application/json
 
@@ -17,8 +17,20 @@ Content-Type: application/json
     "password": "pass"
 }
 
-### HTTP/1.1
+### HTTP/1.1 Get All Active Sessions
 GET http://localhost:8000/api/users/sessions
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRERDlFRjFELTI0MTAtNEU1Qy1BQ0YxLUU5NEQwMkNBOUQxNyIsImVtYWlsIjoia2V2aW5AZ21haWwuY29tIiwiaWF0IjoxNzI2NzU3NDg2LCJleHAiOjE3MjY3NjEwODZ9.yeoca4C80Y-RwPJxatmabQ7US96dSYEc2nZJAJUUOI4
-### HTTP/1.1
-GET http://localhost:8000/api/users 
+Authorization: Bearer <access_token>
+
+### HTTP/1.1 Logout from All Devices
+POST http://localhost:8000/api/users/logout-all
+Authorization: Bearer <access_token>
+
+### HTTP/1.1 Logout from One Device
+POST http://localhost:8000/api/users/logout
+Authorization: Bearer <access_token>
+
+Content-Type: application/json
+
+{
+    "refreshToken": "<refresh_token>"
+}
