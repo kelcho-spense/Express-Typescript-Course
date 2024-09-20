@@ -47,7 +47,7 @@ export const loginUser = async (email: string, password: string): Promise<LoginR
 
     if (!isPasswordValid) throw new Error('Invalid credentials');
 
-    const accessToken = jwt.sign({ id: user.id, email: user.email }, config.jwtSecret, { expiresIn: '1m' });
+    const accessToken = jwt.sign({ id: user.id, email: user.email }, config.jwtSecret, { expiresIn: '15m' });
     const refreshToken = jwt.sign({ id: user.id, email: user.email }, config.jwtSecret, { expiresIn: '7d' });
 
     await storeRefreshToken(user.id, refreshToken);

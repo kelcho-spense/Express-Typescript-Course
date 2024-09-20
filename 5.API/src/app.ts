@@ -2,13 +2,13 @@
 import express, { Request, Response } from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
-import logger from './middleware/logger';
 import rateLimiter from './middleware/rateLimiter';
 import userRoutes from './routes/userRoutes';
 import productRoutes from './routes/productRoutes';
-// import setupSwagger from './config/swagger';
+import setupSwagger from './config/swagger';
 import { metricsMiddleware, metricsRoute } from './middleware/metrics';
 import morgan from 'morgan';
+import { config } from './config';
 
 const app = express();
 
@@ -22,8 +22,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
-
 // Alternatively, using morgan
 app.use(morgan('combined'));
 
@@ -34,14 +32,14 @@ app.use(rateLimiter);
 app.use(metricsMiddleware);
 
 // Routes
-app.use('/api/users', userRoutes);
-app.use('/products', productRoutes);
+app.use('/api', userRoutes);
+app.use('/api/products', productRoutes);
 
 // Metrics endpoint
 app.get('/metrics', metricsRoute);
 
 // Swagger documentation
-// setupSwagger(app);
+setupSwagger(app, config.port);
 
 // Health check
 app.get('/health', (req: Request, res: Response) => {

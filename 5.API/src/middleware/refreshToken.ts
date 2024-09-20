@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 
 export const refreshToken = async (req: Request, res: Response) => {
-    const refreshToken = req.cookies['refreshToken'];
+    const { refreshToken } = req.body;
     if (!refreshToken) return res.status(403).json({ message: 'Token expired, login required' });
 
     try {

@@ -19,7 +19,7 @@ Content-Type: application/json
 
 ### HTTP/1.1 Get All Active Sessions
 GET http://localhost:8000/api/users/sessions
-Authorization: Bearer <access_token>
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRERDlFRjFELTI0MTAtNEU1Qy1BQ0YxLUU5NEQwMkNBOUQxNyIsImVtYWlsIjoia2V2aW5AZ21haWwuY29tIiwiaWF0IjoxNzI2ODQyMTQ5LCJleHAiOjE3MjY4NDMwNDl9._g4d3MF-GKfKDEebj0tUgNuqSBJB-ccTObTNqXotYAs
 
 ### HTTP/1.1 Logout from All Devices
 POST http://localhost:8000/api/users/logout-all
@@ -51,7 +51,7 @@ Authorization: Bearer <access_token>
 
 ### HTTP/1.1 Get All Products
 GET http://localhost:8000/api/products
-Authorization: Bearer <access_token>
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRERDlFRjFELTI0MTAtNEU1Qy1BQ0YxLUU5NEQwMkNBOUQxNyIsImVtYWlsIjoia2V2aW5AZ21haWwuY29tIiwiaWF0IjoxNzI2ODM0NDM3LCJleHAiOjE3MjY4MzQ0OTd9.T0zBGg47w3NlYAqQVXsCYbODQ0TI5CWhCsuIo2EgN8g
 
 ### HTTP/1.1 Update Product by ID
 PUT http://localhost:8000/api/products/{id}
@@ -69,5 +69,7 @@ DELETE http://localhost:8000/api/products/{id}
 Authorization: Bearer <access_token>
 
 
+### HTTP/1.1 get metrics
+GET  http://localhost:8000/metrics
 
 
